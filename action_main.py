@@ -30,7 +30,7 @@ def skype_activate_send():
     """
     sk                  =connect_skype(user=os.environ.get('INPUT_SKYPE_USERNAME'),pwd=os.environ.get('INPUT_SKYPE_PASSWORD'))
     skype_ids           =os.environ.get('INPUT_SKYPE_IDS')
-    send_msg_text       =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG_TEXT')
+    send_msg_text       =os.environ.get('INPUT_SEND_MSG_TEXT')
     #send_msg_path       =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG_PATH')
     send_file_path      =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_FILE_PATH')
     
