@@ -1,6 +1,6 @@
 name: docker-action-send-skype
 description: Send messages and files to multiple skype_id(user and group)
-author: Eloco
+author: Bobi Microweber
 branding:
   icon: 'share-2'  
   color: 'green'
@@ -8,7 +8,7 @@ inputs:
   skype_username:
     description: 'the email address which u input to log in'
     required: true
-    default: 'eloco@outlook.com'
+    default: 'bobi@microweber.com'
   skype_password:
     description: 'passwd'
     required: true
@@ -21,6 +21,10 @@ inputs:
     description: 'send all the message in the path [support both folder and file, not support sub-folder]'
     required: false
     default: 'message.txt'
+  send_msg_text:
+    description: 'send the message'
+    required: false
+    default: 'your memssage'
   send_file_path:
     description: 'send all the file in the path [support both folder and file, not support sub-folder]'
     required: false
