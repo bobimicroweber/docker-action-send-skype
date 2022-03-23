@@ -30,9 +30,9 @@ def skype_activate_send():
     """
     sk                  =connect_skype(user=os.environ.get('INPUT_SKYPE_USERNAME'),pwd=os.environ.get('INPUT_SKYPE_PASSWORD'))
     skype_ids           =os.environ.get('INPUT_SKYPE_IDS')
-    send_msg            =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG')
-    send_msg_path       =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG_PATH')
-    #send_file_path      =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_FILE_PATH')
+    send_msg_text       =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG_TEXT')
+    #send_msg_path       =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_MSG_PATH')
+    send_file_path      =os.environ.get('GITHUB_WORKSPACE')+"/"+os.environ.get('INPUT_SEND_FILE_PATH')
     
     """
     [update] send something to id on skype
@@ -56,7 +56,7 @@ def skype_activate_send():
     for skype_id in skype_ids.strip().split():
         ch = sk.chats[skype_id] if "@thread.skype" in skype_id else sk.contacts[skype_id].chat #sent to group chat or contact by id
         #walk_and_run(send_func=send_msg ,file_path=send_msg_path ,ch=ch)
-        ch.sendMsg(emoji.emojize(send_msg,use_aliases=True))
+        ch.sendMsg(emoji.emojize(send_msg_text,use_aliases=True))
         walk_and_run(send_func=send_file,file_path=send_file_path,ch=ch)
 
 if __name__ == '__main__':
